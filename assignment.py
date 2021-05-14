@@ -31,23 +31,24 @@ bfs(cx, cy, ox, oy, V)
 
 # 2번
 
-
-def bfs(X, D, c=0):
-    G = [[X]]
-    while G:
-        n = G.pop(0)
-        if D in n:
-            print(c)
-            return
-        L = []
-        for i in n:
-            L.extend([i-1, i+1, 2*i])
-        G.append(L)
-        L = []
-        c += 1
+from collections import deque
 
 
-X, D = list(map(int, input().split()))
+def bfs(X, D):
+    V = [0] * (10 ** 5 + 1)
+    dq = deque([X])
+    while dq:
+        n = dq.popleft()
+        if D == n:
+            print(V[n])
+            break
+        for i in (n-1, n+1, 2*n):
+            if 0 <= i <= (10 ** 5) and not V[i]:
+                V[i] = V[n] + 1
+                dq.append(i)
+
+
+X, D = map(int, input().split())
 bfs(X, D)
 
 # 3번
