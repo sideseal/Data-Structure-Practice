@@ -1,3 +1,4 @@
+# in-place
 def partition(arr, start, end):
     pivot = arr[start]
     left = start + 1
@@ -15,12 +16,14 @@ def partition(arr, start, end):
         arr[start], arr[right] = arr[right], arr[start]
     return right
 
-def quick_sort(arr,start,end):
+
+def quick_sort(arr, start, end):
     if start < end:
         pivot = partition(arr, start, end)
-        quick_sort(arr, start, pivot-1)
-        quick_sort(arr,pivot+1,end)
+        quick_sort(arr, start, pivot - 1)
+        quick_sort(arr, pivot + 1, end)
     return arr
 
-arr = [6,1,3,5,4,7,9,8,2]
-print(quick_sort(arr,0,len(arr)-1))
+
+arr = [6, 1, 3, 5, 4, 7, 9, 8, 2]
+print(quick_sort(arr, 0, len(arr) - 1))
