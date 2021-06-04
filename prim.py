@@ -40,6 +40,8 @@ def prim(start, node_num):
                 if not visited[j] and adj_mat[node][j] < distances[j]:
                     distances[j] = adj_mat[node][j]
 
+        print(distances)
+
 
 prim(0, node_num)
 print("distances: ", distances)

@@ -36,6 +36,7 @@ class Heap:
         self.array.insert(0, tail_value)
         now_index = 0
         next_index = 0
+        n = 0
         while True:
             now_index = next_index
             next_index *= 2
@@ -54,12 +55,13 @@ class Heap:
 
 if __name__ == "__main__":
     m_heap = Heap()
-    m_heap.insertElement(2)
-    m_heap.insertElement(4)
-    m_heap.insertElement(5)
-    m_heap.insertElement(8)
-    m_heap.insertElement(2)
-    m_heap.insertElement(3)
+    m_heap.insertElement(97)
+    m_heap.insertElement(53)
+    m_heap.insertElement(59)
+    m_heap.insertElement(26)
+    m_heap.insertElement(41)
+    m_heap.insertElement(58)
+    m_heap.insertElement(31)
     print("Heap :", m_heap)
     print("Delete Root :", m_heap.deleteRoot())
     print("Delete Root :", m_heap.deleteRoot())
